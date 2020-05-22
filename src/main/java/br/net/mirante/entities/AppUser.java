@@ -1,9 +1,14 @@
 package br.net.mirante.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="app_user")
@@ -16,6 +21,9 @@ public class AppUser {
 	private String login;
 	
 	private String password;
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Profile profile;
 
 	public Long getId() {
 		return id;
@@ -39,6 +47,14 @@ public class AppUser {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
 	}
 	
 	

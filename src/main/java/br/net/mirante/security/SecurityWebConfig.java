@@ -23,13 +23,7 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter{
 	private AppUserDetailsService appUserDetailsService;
 	
 	private static final String[] WHITELIST = {
-			"/v2/api-docs",
-            "/swagger-resources",
-            "/swagger-resources/**",
-            "/configuration/ui",
-            "/configuration/security",
-            "/swagger-ui.html",
-            "/webjars/**"
+
 	};
 	
 	@Override
@@ -38,7 +32,6 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter{
 		httpSecurity.csrf().disable().authorizeRequests()
 			.antMatchers(WHITELIST).permitAll()
 			.antMatchers(HttpMethod.POST, "/users/login").permitAll()
-			.antMatchers(HttpMethod.POST, "/users/registrar").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			
