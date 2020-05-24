@@ -1,5 +1,7 @@
 package br.net.mirante.viewmodels.response;
 
+import java.util.GregorianCalendar;
+
 import br.net.mirante.entities.Operator;
 
 public class OperatorResponse {
@@ -9,7 +11,8 @@ public class OperatorResponse {
 	private String name;
 
 	private String login;
-
+	
+	private GregorianCalendar creationDate;
 
 	private String profileName;
 	
@@ -21,6 +24,7 @@ public class OperatorResponse {
 		this.id = operator.getId();
 		this.name = operator.getName();
 		this.login = operator.getAppUser().getLogin();
+		this.creationDate = operator.getCreationDate();
 		this.profileName = operator.getAppUser().getProfile().getTitle();
 	}
 	public OperatorResponse(Long id, String name, String login, String password, String profileName) {
@@ -60,6 +64,14 @@ public class OperatorResponse {
 
 	public void setProfileName(String profileName) {
 		this.profileName = profileName;
+	}
+
+	public GregorianCalendar getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(GregorianCalendar creationDate) {
+		this.creationDate = creationDate;
 	}
 	
 	

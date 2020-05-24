@@ -25,7 +25,7 @@ public class Operator {
 	@Column(name="creation_date")
 	private GregorianCalendar creationDate;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private AppUser appUser;
 
 	public Long getId() {

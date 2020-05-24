@@ -1,6 +1,8 @@
 package br.net.mirante.services;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,17 @@ public class OperatorService {
 	@Autowired
 	private ProfileRepository profileRepository;
 	
+	public List<OperatorResponse> list() {
+		List<OperatorResponse> operatorsRsp = new ArrayList<OperatorResponse>();
+		
+		for(Operator operator : operatorRepository.findAll()) {
+			OperatorResponse operatorResponse = new OperatorResponse(operator);
+			operatorsRsp.add(operatorResponse);
+		}
+		
+		return operatorsRsp;
+	}
+	
 	public void register(OperatorRequest operatorRequest) {
 		
 		Optional<Profile> profile = profileRepository.findById(Long.valueOf(ProfileTypesEnum.MANAGER.type));
@@ -45,6 +58,11 @@ public class OperatorService {
 		
 	}
 	
+	public void remove(Long id) {
+		Optional<Operator> operator = operatorRepository.findById(id);
+		operatorRepository.deleteById(id);
+		appUserRepository.delete(operator.get().getAppUser());
+	}
 	public OperatorResponse update(OperatorRequest operatorRequest) {
 		Optional<Operator> operator = operatorRepository.findById(operatorRequest.getId());
 		

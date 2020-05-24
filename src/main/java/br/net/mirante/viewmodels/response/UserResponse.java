@@ -32,8 +32,6 @@ public class UserResponse {
 	public void setProfileId(Long profileId) {
 		this.profileId = profileId;
 	}
-
-	
 	
 
 }
