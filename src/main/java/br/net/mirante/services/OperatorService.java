@@ -15,6 +15,7 @@ import br.net.mirante.repository.AppUserRepository;
 import br.net.mirante.repository.OperatorRepository;
 import br.net.mirante.repository.ProfileRepository;
 import br.net.mirante.viewmodels.request.OperatorRequest;
+import br.net.mirante.viewmodels.response.OperatorResponse;
 
 @Component
 public class OperatorService {
@@ -44,6 +45,15 @@ public class OperatorService {
 		
 	}
 	
+	public OperatorResponse update(OperatorRequest operatorRequest) {
+		Optional<Operator> operator = operatorRepository.findById(operatorRequest.getId());
+		
+		operator.get().setName(operatorRequest.getName());
+		OperatorResponse operatorResponse = new OperatorResponse(operator.get()); 
+		
+		return operatorResponse;
+	}
+	
 	private AppUser parseUser(String login, String password, Profile profile) {
 		AppUser appUser = new AppUser();
 		
@@ -63,6 +73,7 @@ public class OperatorService {
 		
 		return operator;
 	}
+	
 	
 	
 }

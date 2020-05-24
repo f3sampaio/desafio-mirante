@@ -1,5 +1,7 @@
 package br.net.mirante.viewmodels.response;
 
+import br.net.mirante.entities.Operator;
+
 public class OperatorResponse {
 
 	private Long id;
@@ -8,9 +10,25 @@ public class OperatorResponse {
 
 	private String login;
 
-	private String password;
 
 	private String profileName;
+	
+	public OperatorResponse() {
+		
+	}
+	
+	public OperatorResponse(Operator operator) {
+		this.id = operator.getId();
+		this.name = operator.getName();
+		this.login = operator.getAppUser().getLogin();
+		this.profileName = operator.getAppUser().getProfile().getTitle();
+	}
+	public OperatorResponse(Long id, String name, String login, String password, String profileName) {
+		this.id = id;
+		this.name = name;
+		this.login = login;
+		this.profileName = profileName;
+	}
 
 	public Long getId() {
 		return id;
@@ -34,14 +52,6 @@ public class OperatorResponse {
 
 	public void setLogin(String login) {
 		this.login = login;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getProfileName() {
