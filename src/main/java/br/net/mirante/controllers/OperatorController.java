@@ -25,6 +25,11 @@ public class OperatorController {
 		return operatorService.list();
 	}
 	
+	@RequestMapping(value="detail/{id}", method=RequestMethod.GET)
+	public OperatorResponse detail(@PathVariable Long id) {
+		return operatorService.detail(id);
+	}
+	
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public void register(@RequestBody OperatorRequest operatorRequest) {
 		operatorService.register(operatorRequest);

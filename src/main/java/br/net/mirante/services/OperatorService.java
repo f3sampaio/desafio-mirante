@@ -58,6 +58,10 @@ public class OperatorService {
 		
 	}
 	
+	public OperatorResponse detail(Long id) {
+		return new OperatorResponse(operatorRepository.findById((id)).get());
+	}
+	
 	public void remove(Long id) {
 		Optional<Operator> operator = operatorRepository.findById(id);
 		operatorRepository.deleteById(id);
@@ -67,7 +71,9 @@ public class OperatorService {
 		Optional<Operator> operator = operatorRepository.findById(operatorRequest.getId());
 		
 		operator.get().setName(operatorRequest.getName());
+		operatorRepository.save(operator.get());
 		OperatorResponse operatorResponse = new OperatorResponse(operator.get()); 
+		
 		
 		return operatorResponse;
 	}
