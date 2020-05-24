@@ -1,6 +1,6 @@
-package br.net.mirante.viewmodels.request;
+package br.net.mirante.viewmodels.response;
 
-public class OperatorRequest {
+public class OperatorResponse {
 
 	private Long id;
 	
@@ -10,7 +10,15 @@ public class OperatorRequest {
 
 	private String password;
 
-	private Long profile_id;
+	private String profileName;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -36,22 +44,15 @@ public class OperatorRequest {
 		this.password = password;
 	}
 
-	public Long getProfile_id() {
-		return profile_id;
+	public String getProfileName() {
+		return profileName;
 	}
 
-	public void setProfile_id(Long profile_id) {
-		this.profile_id = profile_id;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setProfileName(String profileName) {
+		this.profileName = profileName;
 	}
 	
 	
-
+	
+	
 }
