@@ -1,18 +1,17 @@
 package br.net.mirante.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.net.mirante.entities.Person;
 import br.net.mirante.services.PersonService;
 import br.net.mirante.viewmodels.request.PersonViewModelRequest;
 
-@Controller
+@RestController
 @RequestMapping(value="persons")
 public class PersonController {
 
