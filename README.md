@@ -2,6 +2,8 @@
 
 O projeto foi desenvolvido utilizando linguagem Java e framework de desenvolvimento Spring.
 
+# Como subir
+
 ## 1. Criação do banco de dados
 
 O primeiro passo é criar uma database no Mysql local com o nome de `desafiomirante`.
