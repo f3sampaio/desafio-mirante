@@ -33,12 +33,3 @@ INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('1', 'Administrad
 INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('2', 'Gerente');
 INSERT INTO `desafiomirante`.`app_user` (`id`, `login`, `password`, `profile_id`) VALUES ('1', 'mirante01', '$2a$10$7kbXCnAWrx25BNSd/Af2Ge8cYGWFjj0Sx7buRd1A5t7gn/4soUtiO', '1');
 ```
-
-## 4. Autenticação
-
-O usuário e senha para autenticação como administrador na aplicação é:
-
-```
-login: mirante01
-senha: 123456
-```
