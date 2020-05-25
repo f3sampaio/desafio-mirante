@@ -23,3 +23,22 @@ Agora é necessário criar um usuário com os privilégios todos os privilégios
 Com o banco de dados local já configurado e o Maven instalado, execute o seguinte comando no terminal a partir da pasta raíz do projeto.
 
 > mvn spring-boot:run
+
+## 3. Inserção de dados
+
+Para que a aplicação funcione corretamente, é necessário executar o seguinte script de inserts na base de dados criada a partir do Hibernate:
+
+```
+INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('1', 'Administrador');
+INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('2', 'Gerente');
+INSERT INTO `desafiomirante`.`app_user` (`id`, `login`, `password`, `profile_id`) VALUES ('1', 'mirante01', '$2a$10$7kbXCnAWrx25BNSd/Af2Ge8cYGWFjj0Sx7buRd1A5t7gn/4soUtiO', '1');
+```
+
+## 4. Autenticação
+
+O usuário e senha para autenticação como administrador na aplicação é:
+
+```
+login: mirante01
+senha: 123456
+```
