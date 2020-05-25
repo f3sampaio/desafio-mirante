@@ -9,12 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.net.mirante.viewmodels.request.PhoneRequest;
+
 @Entity
 @Table(name="phone")
 public class Phone {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
 	private Long id;
 	
 	@Column(name="ddd", nullable = false, length = 3)
@@ -29,6 +32,16 @@ public class Phone {
 	@Column(name="creation_date", nullable = false )
 	private GregorianCalendar creationDate;
 
+	public Phone() {
+		
+	}
+	
+	public Phone(PhoneRequest phoneRequest) {
+		this.ddd = phoneRequest.getDdd();
+		this.phone = phoneRequest.getPhone();
+		this.type = phoneRequest.getType();
+	}
+	
 	public Long getId() {
 		return id;
 	}

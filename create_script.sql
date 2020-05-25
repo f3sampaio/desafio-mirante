@@ -128,5 +128,8 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('1', 'Administrdor');
+INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('1', 'Administrador');
 INSERT INTO `desafiomirante`.`profile` (`id`, `title`) VALUES ('2', 'Gerente');
+INSERT INTO `desafiomirante`.`app_user` (`id`, `login`, `password`, `profile_id`) VALUES ('1', 'mirante01', '$2a$10$7kbXCnAWrx25BNSd/Af2Ge8cYGWFjj0Sx7buRd1A5t7gn/4soUtiO', '1');
+INSERT INTO `desafiomirante`.`app_user` (`id`, `login`, `password`, `profile_id`) VALUES ('2', 'fmarques899', '$2a$10$nGtfJasSDyit5wVC7Mo4MuXhKEi4.rENLY5ZEOzdWCPY/y6FqnbGi', '1');
+
