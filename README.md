@@ -2,7 +2,7 @@
 
 O projeto foi desenvolvido utilizando linguagem Java e framework de desenvolvimento Spring.
 
-# 1. Criação do banco de dados
+## 1. Criação do banco de dados
 
 O primeiro passo é criar uma database no Mysql local com o nome de `desafiomirante`.
 
@@ -16,7 +16,7 @@ Agora é necessário criar um usuário com os privilégios todos os privilégios
 
 > GRANT ALL PRIVILEGES ON desafiomirante.* TO 'mirante'@'localhost';
 
-# 2. Executando o back-end
+## 2. Executando o back-end
 
 Com o banco de dados local já configurado e o Maven instalado, execute o seguinte comando no terminal a partir da pasta raíz do projeto.
 
